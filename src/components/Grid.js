@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Cell from './Cell';
 
 function Grid({ size, activeItem }) {
@@ -8,12 +9,20 @@ function Grid({ size, activeItem }) {
       rowsAndColumns.map((row) => 
         rowsAndColumns.map((column) => {
           const isActive = column === activeItem.column && row === activeItem.row;
-          
+
           return <Cell key={`${row},${column}`} column={column} isActive={isActive} row={row} />
         })
       )
     }
   </div>
+}
+
+Grid.propTypes = {
+  size: PropTypes.number,
+  activeItem: PropTypes.shape({
+    row: PropTypes.number,
+    column: PropTypes.number,
+  })
 }
 
 export default Grid;

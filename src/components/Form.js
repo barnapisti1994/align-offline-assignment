@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Form({ size, setSize, stepLimit, setStepLimit, restart, reset }) {
   return(
@@ -16,6 +17,15 @@ function Form({ size, setSize, stepLimit, setStepLimit, restart, reset }) {
       <button onClick={restart}>Restart</button>
     </div>
   )
+}
+
+Form.propTypes = {
+  size: PropTypes.number,
+  setSize: PropTypes.func,
+  stepLimit: PropTypes.number,
+  setStepLimit: PropTypes.func,
+  restart: PropTypes.func,
+  reset: PropTypes.func,
 }
 
 export default Form;

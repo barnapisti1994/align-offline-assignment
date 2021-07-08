@@ -58,7 +58,6 @@ function App() {
         return;
     }
 
-
     setSteps([...steps, `{${newActiveItem.row},${newActiveItem.column}}`]);
     setActiveItem(newActiveItem);
   }, [activeItem, size, steps]);

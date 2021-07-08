@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Results({ steps }) {
   const resultString = `[${steps.join(',')}]`;
@@ -10,6 +11,10 @@ function Results({ steps }) {
       </div>
     </div>
   );
+}
+
+Results.propTypes = {
+  steps: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default Results;
